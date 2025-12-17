@@ -1,0 +1,249 @@
+/* --- Root Variables --- */
+:root {
+    --primary-blue: #0a235c;
+    --accent-blue: #1e40af;
+    --white: #ffffff;
+    --grey-light: #f4f4f4;
+    --text-dark: #333333;
+    --text-light: #666666;
+    --transition: all 0.3s ease;
+}
+
+/* --- Global Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.alternate-bg {
+    background-color: var(--grey-light);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.underline {
+    width: 60px;
+    height: 4px;
+    background: var(--accent-blue);
+    margin: 10px auto;
+}
+
+/* --- Navigation --- */
+header {
+    background: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.logo span {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--primary-blue);
+    text-transform: uppercase;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--accent-blue);
+}
+
+/* --- Hero --- */
+.hero {
+    background: linear-gradient(rgba(10, 35, 92, 0.8), rgba(10, 35, 92, 0.8)), 
+                url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    text-align: center;
+    padding-top: 80px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--white);
+    color: var(--primary-blue);
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 700;
+    margin-top: 25px;
+    transition: var(--transition);
+}
+
+.btn:hover {
+    background: var(--accent-blue);
+    color: var(--white);
+}
+
+/* --- Cards & Features --- */
+.card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.philosophy-list {
+    list-style: none;
+}
+
+.service-item {
+    text-align: center;
+    padding: 40px 20px;
+    background: var(--white);
+    border-bottom: 4px solid var(--accent-blue);
+    transition: var(--transition);
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+}
+
+.service-item i {
+    font-size: 3rem;
+    color: var(--accent-blue);
+    margin-bottom: 20px;
+}
+
+/* --- SWOT --- */
+.grid-swot {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.swot-box {
+    padding: 20px;
+    color: white;
+    border-radius: 5px;
+}
+
+.s { background: #2e7d32; }
+.w { background: #c62828; }
+.o { background: #1565c0; }
+.t { background: #ef6c00; }
+
+/* --- Team --- */
+.team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.member {
+    background: var(--white);
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+/* --- Footer --- */
+.footer {
+    background: var(--primary-blue);
+    color: var(--white);
+    padding: 60px 0 20px;
+}
+
+.footer h3 {
+    margin-bottom: 20px;
+}
+
+.footer i {
+    margin-right: 10px;
+    color: #00d4ff;
+}
+
+.socials a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Can be expanded with JS */
+    }
+    .hamburger {
+        display: block;
+    }
+    .grid-swot {
+        grid-template-columns: 1fr;
+    }
+}
